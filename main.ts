@@ -12,10 +12,11 @@
 // env set it falls back to ./output beside this file.
 
 import { cpSync, existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { buildDossier } from "./vendor/makefun-app.ts";
 
-const repoRoot = resolve(".");
+const repoRoot = process.env.MAKEFUN_BOT_DIR ?? fileURLToPath(new URL(".", import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? join(repoRoot, "output");
 
 // Guard: refuse to hand in an entry with no screenshots at all.
