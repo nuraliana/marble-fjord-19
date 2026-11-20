@@ -1,0 +1,216 @@
+/* Palm Heat Cover Studio — Vice City dusk theme. Dark editor chrome so the
+   bright cover preview is the star; warm sunset accents, neon for focus. */
+
+:root {
+  --ink: #f4efe8;
+  --ink-dim: #b9b0c4;
+  --bg: #14101d;
+  --card: #1e1829;
+  --card-2: #262036;
+  --line: #3a3049;
+  --accent: #ff7a1a;
+  --accent-2: #ff2d78;
+  --neon: #2ee6ff;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.studio { max-width: 1280px; margin: 0 auto; padding: 20px 24px 40px; }
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.masthead h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), #b06bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline { margin: 4px 0 0; color: var(--ink-dim); font-size: 14px; }
+
+.export {
+  flex: none;
+  font: inherit;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #160a24;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(255, 45, 120, 0.35);
+}
+
+.export:hover { filter: brightness(1.08); }
+.export:active { transform: translateY(1px); }
+
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.preview-wrap { position: sticky; top: 16px; }
+
+#stage {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 150px);
+  object-fit: contain;
+  background: #0d0a14;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  cursor: grab;
+  touch-action: none;
+}
+
+#stage:active { cursor: grabbing; }
+
+.hint { color: var(--ink-dim); font-size: 13px; text-align: center; }
+
+.panel { display: flex; flex-direction: column; gap: 14px; }
+
+.group {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.group h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.choices button, .samples button, #shuffleBtn, #resetBtn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-2);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.choices button.on, .panel-pick button.on {
+  border-color: var(--accent-2);
+  background: linear-gradient(90deg, rgba(255, 122, 26, 0.25), rgba(255, 45, 120, 0.25));
+  color: #fff;
+}
+
+.file-btn {
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  padding: 12px;
+  border-radius: 8px;
+  color: #160a24;
+  background: linear-gradient(90deg, var(--neon), #7df0c8);
+  cursor: pointer;
+}
+
+.file-btn input { display: none; }
+
+.drop-note { margin: 8px 0 0; color: var(--ink-dim); font-size: 13px; text-align: center; }
+
+.samples { display: flex; gap: 8px; margin-top: 10px; }
+.samples button { flex: 1; }
+
+#dropzone.dragging {
+  outline: 2px dashed var(--neon);
+  outline-offset: 4px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-dim);
+  margin-bottom: 10px;
+}
+
+label:last-child { margin-bottom: 0; }
+
+input[type="text"], select {
+  font: inherit;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-2);
+}
+
+input[type="text"]:focus, select:focus {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 1px;
+}
+
+input[type="range"] { width: 100%; accent-color: var(--accent-2); }
+
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1; }
+.row button { width: 100%; }
+
+.panel-label { margin: 0 0 8px; font-weight: 800; color: var(--ink); }
+
+#status { color: var(--neon); font-size: 13px; min-height: 1.2em; margin: 0; }
+
+.fine { color: var(--ink-dim); font-size: 12px; margin: 0; }
+
+@media (max-width: 860px) {
+  .workbench { grid-template-columns: 1fr; }
+  .preview-wrap { position: static; }
+  .masthead { flex-direction: column; align-items: flex-start; }
+}
+
+/* Screenshot mode: cover fills the whole viewport, editor hidden. */
+body.shot-cover { background: #120e1e; }
+body.shot-cover .studio { max-width: none; margin: 0; padding: 0; }
+body.shot-cover .masthead, body.shot-cover .panel, body.shot-cover .hint { display: none; }
+body.shot-cover .workbench { display: block; margin: 0; }
+body.shot-cover .preview-wrap { position: static; }
+body.shot-cover #stage {
+  width: 100vw;
+  height: 100vh;
+  max-height: none;
+  object-fit: fill;
+  border-radius: 0;
+  box-shadow: none;
+}
