@@ -7,8 +7,8 @@ files, it makes no network request, and your photos never leave your
 computer.
 
 [![make.fun](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01)
-[![rank](https://make.fun/rank/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01)
-[![reward](https://make.fun/reward/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/nuraliana/marble-fjord-19/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/nuraliana/marble-fjord-19/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 
 ## How to use it
 
